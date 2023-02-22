@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React_DOM</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+</head>
+
+<body>
+    <!-- <div class="post-item">
+        <h2 title="Hoc React">Hoc ReactJS</h2>
+        <p>Hoc ReactJS tu co ban den nang cao</p>
+    </div>
+     -->
+
+     <div id="root"></div>
+
+    <script>
+
+        const divReact = React.createElement(
+            'div',
+            {
+                className: 'post-item'
+            },
+            React.createElement(
+                'h2',
+                {
+                    title: 'Hoc React'
+                },
+                'Hoc ReactJS'),
+            React.createElement(
+                'p',
+                {},
+                'Hoc ReactJS tu co ban den nang cao'));
+        console.log(divReact);
+
+        // get root element
+
+        const root = document.getElementById('root');
+        console.log(root);
+
+        // React-DOM de render ra giao dien (render to UI)
+
+
+        ReactDOM.render(divReact, root);
+
+    </script>
+</body>
+
+</html>

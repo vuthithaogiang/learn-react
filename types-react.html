@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types React</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="app"></div>
+    <script type="text/babel">
+
+        function Header(){
+            return (  <div className="header">Header</div>);
+        }
+
+        function Content() {
+            return ( <div className="content">Content</div>);
+        }
+
+        function Footer() {
+            return ( <div className="footer">Footer</div>);
+        }
+
+        // class ke thu thua tu reac component
+        class Main extends React.Component {
+            render() {
+                 return (<div className='main-content'>Main Content</div>);
+            }
+
+        }
+ 
+        const app = (
+            <div className="wrapper">
+                <Header></Header>
+                <Main></Main>
+                <Content></Content>
+                <Footer></Footer>
+            </div>
+
+        );
+
+        ReactDOM.render(app, document.querySelector('#app'));
+
+
+    </script>
+    
+</body>
+</html>

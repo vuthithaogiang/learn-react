@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <h1>Add React to Website</h1>
+    <div class="root"></div>
+
+    <script>
+
+    //DOM
+    var h1DOM = document.createElement('h1');
+    h1DOM.title = "Create element by DOM";
+    h1DOM.className = "heading";
+    h1DOM.innerText = "Create element by DOM";
+    console.dir(h1DOM);
+
+    document.body.appendChild(h1DOM);
+
+    var ulDOM = document.createElement('ul');
+    var liDOM1 = document.createElement('li');
+    var liDOM2 = document.createElement('li');
+
+    liDOM1.innerHTML = 'JavaScript';
+    liDOM2.innerText = 'HTML';
+
+    ulDOM.appendChild(liDOM1);
+    ulDOM.appendChild(liDOM2);
+
+    document.body.appendChild(ulDOM);
+
+
+    
+
+    // React
+    const h1React = React.createElement('h1', {
+         id: 'heading',
+        title: 'React', 
+        className: 'heading'
+    }, 'Create element by React');
+    console.log(h1React);
+
+    const ulReact = React.createElement('ul',null, 
+    React.createElement('li', {
+        id: 'ul-li-item'
+    }, 'JavaScript'),
+    React.createElement('li', {
+        id: 'ul-li-item'
+    }, 'CSS'));
+
+    console.log(ulReact);
+
+    // render to UI by React- DOM
+
+    const root = document.querySelector(".root");
+    console.log(root);
+
+    ReactDOM.render(h1React, root);
+
+
+    </script>
+
+</body>
+
+</html>
